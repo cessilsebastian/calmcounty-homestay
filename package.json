@@ -1,7 +1,6 @@
 {
   "name": "calmcounty-homestay-web",
-  "private": true,
-  "homepage": "https://cessilsebastian.github.io/Homestay/",
+  "homepage": "https://cessilsebastian.github.io/calmcounty-homestay/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
