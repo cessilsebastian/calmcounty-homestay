@@ -15,7 +15,7 @@ function WhatsAppButton() {
         <span className={WhatsappCSS.icon_text}>Message us</span>
       </a>
 
-      <a href="tel:917907756911" className={WhatsappCSS.icon_btn}>
+      <a href="tel:+917907756911" className={WhatsappCSS.icon_btn}>
         <i className={`ri-phone-line ${WhatsappCSS.icon}`}></i>
         <span className={WhatsappCSS.icon_text}>Call us</span>
       </a>
