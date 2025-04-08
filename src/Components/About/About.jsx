@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useScroll } from "../../ScrollContext.jsx";
-import aboutCSS from "./../About/About.module.css";
-import aboutImg from "./../../assets/slider/aboutImg.webp";
+import aboutCSS from "./About.module.css";
+import aboutImg from "../../assets/slider/aboutImg.webp";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function About() {
   const { about } = useScroll();
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -20,10 +20,9 @@ function About() {
   }, []);
 
   return (
-    // <div className={`${aboutCSS.about_wrapper} section`}>
     <div className={aboutCSS.about_wrapper} ref={about}>
       <div className={aboutCSS.about_img} data-aos="slide-up">
-        <img src={aboutImg} alt="about_image" />
+        <img src={aboutImg} alt="About Calm County Homestay" />
       </div>
       <div className={aboutCSS.about_content}>
         <small className={aboutCSS.sectionHeading}>
@@ -38,33 +37,21 @@ function About() {
           getaway from the hustle and bustle of city life.
         </p>
 
-        {/* Features Section */}
         <div className={aboutCSS.features}>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fas fa-feather"></i> <span>Peaceful Location</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fas fa-coffee"></i>
-            <span>Free Breakfast</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fas fa-wifi"></i> <span>Free High-Speed Wifi</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fas fa-car"></i> <span>Parking</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fas fa-bed"></i> <span>Cozy Accomodation</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fa fa-battery-full"></i> <span>Power Backup</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fa fa-fire"></i> <span>Campfire Facilities</span>
-          </div>
-          <div className={aboutCSS.featureItem} data-aos="fade-up">
-            <i className="fa fa-drumstick-bite"></i> <span>BBQ Facilities</span>
-          </div>
+          {[
+            ["fas fa-feather", "Peaceful Location"],
+            ["fas fa-coffee", "Complementary Breakfast"],
+            ["fas fa-wifi", "Free High-Speed Wifi"],
+            ["fas fa-car", "Parking"],
+            ["fas fa-bed", "Cozy Accommodation"],
+            ["fa fa-battery-full", "Power Backup"],
+            ["fa fa-fire", "Campfire Facilities"],
+            ["fa fa-drumstick-bite", "BBQ Facilities"],
+          ].map(([icon, label], i) => (
+            <div className={aboutCSS.featureItem} key={i} data-aos="fade-up">
+              <i className={icon}></i> <span>{label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

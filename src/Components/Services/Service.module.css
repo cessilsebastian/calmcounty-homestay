@@ -8,43 +8,57 @@
     gap: 30px;
 }
 
-.Service_cards .Service_card {
+.Service_card {
     padding: 35px 25px;
     border: 1px solid transparent;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    background-color: rgb(197, 190, 171, 0.25);
-    transition: .3s;
+    gap: 10px;
+    background-color: rgba(197, 190, 171, 0.25);
+    transition: 0.3s;
 }
 
-.Service_cards .Service_card:hover {
+.Service_card:hover {
     border-color: #1f3623;
 }
 
-.Service_cards .Service_card i {
+.Service_card i {
     font-size: 35px;
     color: #1f3623;
     margin-bottom: 5px;
 }
 
-.Service_cards .Service_card:hover i {
+.Service_card:hover i {
     animation: Anim_shake 1s forwards linear;
 }
 
-.Service_cards .Service_card h3 {
+.Service_card h3 {
     font-size: 20px;
     color: #1f3623;
     margin-bottom: 10px;
 }
 
-.Service_cards .Service_card p {
+.Service_card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.Service_card ul li {
     font-size: 14px;
-    margin-top: 3px;
-    font-family: 'poppins';
+    font-family: 'Poppins', sans-serif;
     color: #8b5c4b;
     font-weight: 600;
+    margin-top: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.Service_card ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #8b5c4b;
 }
 
 @keyframes Anim_shake {
@@ -76,18 +90,14 @@
     }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
     .Service_cards {
         grid-template-columns: repeat(2, 1fr);
-
     }
-
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .Service_cards {
         grid-template-columns: repeat(1, 1fr);
-
     }
-
 }

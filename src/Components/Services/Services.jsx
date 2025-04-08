@@ -1,9 +1,55 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ServicesCSS from "./../Services/Service.module.css";
 import { useScroll } from "../../ScrollContext";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+const serviceData = [
+  {
+    icon: "ri-hotel-line",
+    title: "Basic Facilities",
+    features: [
+      "Hassle-Free Parking",
+      "Power Backup",
+      "High-Speed Wi-Fi",
+      "Daily Housekeeping",
+      "24/7 Hot Water",
+    ],
+  },
+  {
+    icon: "ri-hotel-bed-line",
+    title: "Room Amenities",
+    features: [
+      "Comfortable Bedding",
+      "Private Balcony",
+      "Room Service",
+      "AC & Non-AC Rooms",
+      "Personal Wardrobe & Desk",
+    ],
+  },
+  {
+    icon: "ri-goblet-line",
+    title: "Dining Options",
+    features: [
+      "Homemade Kerala Cuisine",
+      "Home-Grown Produce",
+      "Complementary Breakfast",
+      "Kerala Sadhya on Request",
+      "Homemade Snacks & Spices",
+    ],
+  },
+  {
+    icon: "ri-restaurant-line",
+    title: "Special Features",
+    features: [
+      "Mini Library & Board Games",
+      "Volleyball & Outdoor Games",
+      "Campfire & BBQ Nights",
+      "Nature Walks & Birdwatching",
+      "Android TV in all Rooms",
+    ],
+  },
+];
 
 function Services() {
   const { services } = useScroll();
@@ -19,58 +65,22 @@ function Services() {
       </h2>
 
       <div className={ServicesCSS.Service_cards}>
-        <div
-          className={ServicesCSS.Service_card}
-          data-aos="slide-up"
-          data-aos-delay="100"
-        >
-          <i className="ri-hotel-line"></i>
-          <h3>Basic Facilities</h3>
-          <p>- Hassle-Free Parking</p>
-          <p>- Power Backup</p>
-          <p>- High-Speed Wi-Fi</p>
-          <p>- Daily Housekeeping</p>
-          <p>- 24/7 Hot Water</p>
-        </div>
-        <div
-          className={ServicesCSS.Service_card}
-          data-aos="slide-up"
-          data-aos-delay="200"
-        >
-          <i className="ri-hotel-bed-line"></i>
-          <h3>Room Amenities</h3>
-          <p>- Comfortable Bedding</p>
-          <p>- Private Balcony</p>
-          <p>- Room Service</p>
-          <p>- AC & Non-AC Rooms</p>
-          <p>- Personal Wardrobe & Desk</p>
-        </div>
-        <div
-          className={ServicesCSS.Service_card}
-          data-aos="slide-up"
-          data-aos-delay="300"
-        >
-          <i className="ri-goblet-line"></i>
-          <h3>Dining Options</h3>
-          <p>- Homemade Kerala Cuisine</p>
-          <p>- Home-Grown Produce</p>
-          <p>- Complementary Breakfast</p>
-          <p>- Kerala Sadhya on Request</p>
-          <p>- Homemade Snacks & Spices</p>
-        </div>
-        <div
-          className={ServicesCSS.Service_card}
-          data-aos="slide-up"
-          data-aos-delay="400"
-        >
-          <i className="ri-restaurant-line"></i>
-          <h3>Special Features</h3>
-          <p>- Mini Library & Board Games</p>
-          <p>- Volleyball & Outdoor Games</p>
-          <p>- Campfire & BBQ Nights</p>
-          <p>- Nature Walks & Birdwatching</p>
-          <p>- Pet-Friendly Stay</p>
-        </div>
+        {serviceData.map((service, index) => (
+          <div
+            key={index}
+            className={ServicesCSS.Service_card}
+            data-aos="slide-up"
+            data-aos-delay={`${(index + 1) * 100}`}
+          >
+            <i className={service.icon}></i>
+            <h3>{service.title}</h3>
+            <ul>
+              {service.features.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

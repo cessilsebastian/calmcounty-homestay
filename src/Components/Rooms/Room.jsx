@@ -17,8 +17,8 @@ function Rooms() {
       features: [
         "Huge Glass Windows for the Best Views",
         "Comfortable Bed with Mattress",
-        "Free Wi-Fi and TV",
-        "24/7 Room Service",
+        "Free High-Speed Wi-Fi and Android TV",
+        "Room Service",
         "Non-AC Room",
       ],
       price: "₹3,999",
@@ -31,8 +31,8 @@ function Rooms() {
       features: [
         "Huge Glass Windows for the Best Views",
         "Comfortable Bed with Mattress",
-        "Free Wi-Fi and TV",
-        "24/7 Room Service",
+        "Free High-Speed Wi-Fi and Android TV",
+        "Room Service",
         "Non-AC Room",
       ],
       price: "₹3,999",
@@ -45,8 +45,8 @@ function Rooms() {
       features: [
         "Huge Glass Windows for the Best Views",
         "Comfortable Bed with Mattress",
-        "Free Wi-Fi and TV",
-        "24/7 Room Service",
+        "Free High-Speed Wi-Fi and Android TV",
+        "Room Service",
         "AC Room",
       ],
       price: "₹4,499",
@@ -59,8 +59,8 @@ function Rooms() {
       features: [
         "Private Balcony with Huge Glass Windows for the Best Views",
         "Comfortable Bed with Mattress",
-        "Free Wi-Fi and TV",
-        "24/7 Room Service",
+        "Free High-Speed Wi-Fi and Android TV",
+        "Room Service",
         "AC Room",
       ],
       price: "₹4,499",
