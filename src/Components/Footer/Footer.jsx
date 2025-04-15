@@ -54,7 +54,11 @@ function Footer() {
         </div>
         <h3>Find Us</h3>
         <div className={footerCSS.SocialLinks}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.google.com/search?sca_esv=f9f1a50abb3c6f24&rlz=1CDGOYI_enCA933CA933&hl=en-US&sxsrf=AHTn8zpyst_0muYh8hae6fsjBXh6KSd4AQ%3A1744736947712&kgmid=%2Fg%2F11x8xdzkm6&q=Calm%20County%20Homestay&shndl=30&shem=lcuae%2Cuaasie&source=sh%2Fx%2Floc%2Funi%2Fm1%2F3&kgs=f41a455e9a8a7332"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <SiGoogle className={footerCSS.icon} />
           </a>
           <a
@@ -65,7 +69,7 @@ function Footer() {
             <SiGooglemaps className={footerCSS.icon} />
           </a>
           <a
-            href="https://www.airbnb.ca/rooms/1387027717583524574?check_in=2025-04-18&check_out=2025-04-19&guests=1&adults=6&s=67&unique_share_id=a95ae73c-f5db-40c8-bd7f-c72c924d8fcf"
+            href="https://www.airbnb.co.in/rooms/1387027717583524574?locale=en&_set_bev_on_new_domain=1744737388_EAZDM4N2VlZTI5YT&source_impression_id=p3_1744737391_P313JY5TFOTcjtDZ"
             target="_blank"
             rel="noopener noreferrer"
           >
