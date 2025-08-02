@@ -21,7 +21,7 @@ function Rooms() {
         "Room Service",
         "Non-AC Room",
       ],
-      price: "₹3,999",
+      price: "₹3,000",
     },
     {
       img: roomImg2,
@@ -35,7 +35,7 @@ function Rooms() {
         "Room Service",
         "Non-AC Room",
       ],
-      price: "₹3,999",
+      price: "₹3,000",
     },
     {
       img: roomImg3,
@@ -49,7 +49,7 @@ function Rooms() {
         "Room Service",
         "AC Room",
       ],
-      price: "₹4,499",
+      price: "₹3,500",
     },
     {
       img: roomImg4,
@@ -63,7 +63,7 @@ function Rooms() {
         "Room Service",
         "AC Room",
       ],
-      price: "₹4,499",
+      price: "₹3,500",
     },
   ];
 
