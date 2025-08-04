@@ -1,0 +1,482 @@
+/* c:Users\cessi\Documents\GitHub\Homestay\calmcounty-homestay-web\src\Components\Planner\Planner.module.css */
+
+.plannerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.plannerContainer h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c5b4c;
+    /* A calm, nature-inspired green */
+}
+
+.intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.tripGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.tripCard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.tripCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.tripCard h2 {
+    font-size: 1.5rem;
+    color: #2c5b4c;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #a3d2ca;
+    padding-bottom: 0.5rem;
+}
+
+.destinationList {
+    list-style: none;
+    padding: 0;
+}
+
+.destinationList li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1rem;
+}
+
+.destinationList li:last-child {
+    border-bottom: none;
+}
+
+.destinationList li strong {
+    color: #333;
+}
+
+.polaroidContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.destinationItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.destinationItem:last-child {
+    border-bottom: none;
+}
+
+.destinationInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    gap: 0.25rem;
+}
+
+.destinationInfo strong {
+    font-size: 1.2rem;
+}
+
+.destinationInfo span {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.mapLink {
+    font-size: 0.9rem;
+    color: #2c5b4c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.mapLink:hover {
+    color: #3a7a65;
+    text-decoration: underline;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 1rem;
+    padding: 0.75rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 150px;
+    width: 120px;
+    margin: 0;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.polaroid:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    /* Override stagger to bring to front */
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 120px;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid figcaption {
+    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-top: 0.75rem;
+    color: #555;
+    font-family: "Permanent Marker", cursive;
+}
+
+/* Staggering effect */
+.polaroid:nth-child(2n) {
+    transform: rotate(4deg);
+}
+
+.polaroid:nth-child(3n) {
+    transform: rotate(-3deg);
+}
+
+.ctaSection {
+    background-color: #f7f9f7;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.ctaSection h3 {
+    font-size: 2rem;
+    color: #2c5b4c;
+    margin-top: 0;
+}
+
+.ctaButton {
+    display: inline-block;
+    background-color: #2c5b4c;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.ctaButton:hover {
+    background-color: #3a7a65;
+    transform: translateY(-2px);
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navLeft .logo {
+    display: inline-block;
+    text-align: center;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #355E3B;
+    /* Tailwind Emerald-500 / Green */
+}
+
+.navRight {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #dddddd;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #ffffff;
+}
+
+.navButton {
+    padding: 0.5rem 1rem;
+    background-color: #355E3B;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.navButton:hover {
+    background-color: #355E3B;
+    /* Darker emerald */
+}
+
+
+@media (max-width: 1024px) {
+    .plannerContainer h1 {
+        font-size: 2rem;
+    }
+
+    .tripCard {
+        padding: 1.5rem;
+    }
+
+    .polaroid {
+        width: 100px;
+    }
+
+    .polaroid img {
+        height: 75px;
+    }
+
+    .ctaSection h3 {
+        font-size: 1.7rem;
+    }
+
+    .ctaButton {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .destinationItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .polaroid {
+        width: 100%;
+        max-width: 280px;
+        margin: 1rem auto 0 auto;
+    }
+
+    .destinationInfo {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .intro {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .plannerContainer h1 {
+        font-size: 1.8rem;
+    }
+
+    .tripCard h2 {
+        font-size: 1.3rem;
+    }
+
+    .ctaSection h3 {
+        font-size: 1.5rem;
+    }
+
+    .ctaButton {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navRight {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tripCard {
+        padding: 1rem;
+    }
+
+    .ctaSection {
+        padding: 2rem 1rem;
+    }
+
+    .ctaButton {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .plannerContainer h1 {
+        font-size: 1.5rem;
+    }
+
+    .tripGrid {
+        gap: 1rem;
+    }
+
+    .destinationItem {
+        gap: 1rem;
+    }
+
+    .navButton {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .plannerContainer {
+        padding: 1rem 0.75rem;
+    }
+
+    .plannerContainer h1 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .intro {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        padding: 0 0.5rem;
+    }
+
+    .tripGrid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .tripCard {
+        padding: 1rem;
+    }
+
+    .tripCard h2 {
+        font-size: 1.1rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .destinationItem {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+
+    .destinationInfo {
+        width: 100%;
+        gap: 0.2rem;
+    }
+
+    .destinationInfo strong {
+        font-size: 1rem;
+    }
+
+    .destinationInfo span,
+    .mapLink {
+        font-size: 0.85rem;
+    }
+
+    .polaroid {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .polaroid img {
+        height: auto;
+        max-height: 120px;
+    }
+
+    .polaroid figcaption {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    .ctaSection {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .ctaSection h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .ctaSection p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .ctaButton {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navRight {
+        margin-top: 1rem;
+        gap: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .navButton {
+        width: 100%;
+        text-align: center;
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+}

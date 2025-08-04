@@ -11,11 +11,10 @@ import {
 } from "react-icons/si";
 
 function Footer() {
-  const { footer } = useScroll();
+  //const { footer } = useScroll();
 
   return (
-    <footer className={`${footerCSS.footer_wrapper} section`} ref={footer}>
-      {/* <footer className={footerCSS.footer_wrapper}> */}
+    <footer className={`${footerCSS.footer_wrapper} section`}>
       <div className={footerCSS.FooterLinks}>
         <div className={footerCSS.logo}>
           <h2>The Calm County Homestay</h2>

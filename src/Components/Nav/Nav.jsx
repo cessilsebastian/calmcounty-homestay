@@ -89,11 +89,11 @@ function Nav() {
         <li>
           <a
             onClick={() => {
-              scrollToSection(footer);
+              navigate("/planner");
               menuHandler();
             }}
           >
-            Contact Us
+            Trip Planner
           </a>
         </li>
       </ul>

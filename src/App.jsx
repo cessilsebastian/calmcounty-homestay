@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ScrollProvider } from "./ScrollContext";
 import About from "./Components/About/About";
 import Amenities from "./Components/Amenities/Amenities";
@@ -10,8 +11,9 @@ import Rooms from "./Components/Rooms/Room";
 import Services from "./Components/Services/Services";
 import Testimonial from "./Components/Testimonials/Testimonial";
 import WhatsAppButton from "./Components/Banners/WhatsAppButton";
+import Planner from "./Components/Planner/Planner";
 
-function App() {
+function HomePage() {
   return (
     <ScrollProvider>
       <Nav />
@@ -25,6 +27,24 @@ function App() {
       <Footer />
       <WhatsAppButton />
     </ScrollProvider>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/planner"
+        element={
+          <>
+            <Planner />
+            <Footer />
+            <WhatsAppButton />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 
