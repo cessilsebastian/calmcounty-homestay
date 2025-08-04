@@ -1,5 +1,11 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+import { useEffect } from "react";
 import { ScrollProvider } from "./ScrollContext";
 import About from "./Components/About/About";
 import Amenities from "./Components/Amenities/Amenities";
@@ -31,6 +37,15 @@ function HomePage() {
 }
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const redirect = sessionStorage.redirect;
+    if (redirect) {
+      sessionStorage.removeItem("redirect");
+      navigate(redirect, { replace: true });
+    }
+  }, [navigate]);
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
