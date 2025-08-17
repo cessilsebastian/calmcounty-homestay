@@ -5,6 +5,7 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { useEffect } from "react";
 import { ScrollProvider } from "./ScrollContext";
 import About from "./Components/About/About";
@@ -36,7 +37,7 @@ function HomePage() {
   );
 }
 
-function App() {
+function AppContent() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -60,6 +61,14 @@ function App() {
         }
       />
     </Routes>
+  );
+}
+
+function App() {
+  return (
+    <HelmetProvider>
+      <AppContent />
+    </HelmetProvider>
   );
 }
 

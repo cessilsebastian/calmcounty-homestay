@@ -1,8 +1,10 @@
 // filepath: src/WayanadTripPlanner.jsx
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+
 import PlannerCSS from "./../Planner/Planner.module.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
-function Planner({ title = "Your Ultimate Wayanad Trip Planner" }) {
+function Planner({ title = "Wayanad Trip Planner - Calm County Homestay" }) {
   useEffect(() => {
     document.title = title;
   }, [title]);
@@ -244,86 +246,121 @@ function Planner({ title = "Your Ultimate Wayanad Trip Planner" }) {
   ];
 
   return (
-    <div className={PlannerCSS.Container}>
-      <div className={PlannerCSS.navbar}>
-        <div className={PlannerCSS.navLeft}>
-          <a href="/" className={PlannerCSS.logo}>
-            CALM COUNTY
-          </a>
-        </div>
-        <div className={PlannerCSS.navRight}>
-          <a
-            href="https://wa.me/917907756911"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={PlannerCSS.navButton}
-          >
-            Book Now
-          </a>
-        </div>
-      </div>
+    <>
+      <Helmet>
+        <title>Wayanad Trip Planner - Calm County Homestay</title>
+        <meta
+          name="description"
+          content="Plan your Wayanad trip with our 9 day itineraries. Explore waterfalls, wildlife sanctuaries, temples, and serene nature while staying at Calm County Homestay."
+        />
+        <link rel="canonical" href="https://www.calmcounty.com/planner" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "TouristTrip",
+              name: "Wayanad Trip Planner",
+              description:
+                "Custom 9 day Wayanad itineraries with waterfalls, wildlife sanctuaries, temples, and cultural sites.",
+              itinerary: [
+                {
+                  "@type": "TouristAttraction",
+                  name: "Edakkal Caves",
+                  url: "https://www.google.com/maps/search/?api=1&query=Edakkal+Caves,Wayanad",
+                },
+                {
+                  "@type": "TouristAttraction",
+                  name: "Kurumbalakotta",
+                  url: "https://www.google.com/maps/search/?api=1&query=Kurumbalakotta,Wayanad",
+                },
+              ],
+            }),
+          }}
+        />
+      </Helmet>
 
-      <div className={`${PlannerCSS.plannerContainer} section`}>
-        <h1>{title}</h1>
-        <p className={PlannerCSS.intro}>
-          Imagine waking up to the serene beauty of lush, green paddy fields in
-          Wayanad. At The Calm County Homestay, this is your daily reality.
-          We've crafted these personalized Wayanad itineraries for up to 9 days
-          to help you explore the best of this enchanting district in Kerala,
-          all from the comfort of your home-away-from-home. Discover the magic
-          of Wayanad with our expert guidance.
-        </p>
-        <div className={PlannerCSS.tripGrid}>
-          {tripOptions.map((option) => (
-            <article key={option.days} className={PlannerCSS.tripCard}>
-              <h2>Explore Wayanad - Day {option.days}</h2>
-              <ul className={PlannerCSS.destinationList}>
-                {option.destinations.map((destination) => (
-                  <li
-                    key={destination.name}
-                    className={PlannerCSS.destinationItem}
-                  >
-                    <div className={PlannerCSS.destinationInfo}>
-                      <strong>{destination.name}</strong>
-                      <span>
-                        approx. {destination.distance} from Calm County
-                      </span>
-                      <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${destination.mapQuery}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={PlannerCSS.mapLink}
-                      >
-                        <FaMapMarkerAlt /> View on Map
-                      </a>
-                    </div>
-                    <figure className={PlannerCSS.polaroid}>
-                      <img src={destination.image} alt={destination.name} />
-                      <figcaption>{destination.name}</figcaption>
-                    </figure>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+      <div className={PlannerCSS.Container}>
+        <div className={PlannerCSS.navbar}>
+          <div className={PlannerCSS.navLeft}>
+            <a href="/" className={PlannerCSS.logo}>
+              CALM COUNTY
+            </a>
+          </div>
+          <div className={PlannerCSS.navRight}>
+            <a
+              href="https://wa.me/917907756911"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={PlannerCSS.navButton}
+            >
+              Book Now
+            </a>
+          </div>
         </div>
-        <div className={PlannerCSS.ctaSection}>
-          <h3>Ready for Your Wayanad Adventure?</h3>
-          <p>
-            Your perfect retreat amidst nature awaits. Book your stay at The
-            Calm County Homestay and make these travel plans a reality.
+
+        <div className={`${PlannerCSS.plannerContainer} section`}>
+          <h1>{title}</h1>
+          <p className={PlannerCSS.intro}>
+            Imagine waking up to the serene beauty of lush, green paddy fields
+            in Wayanad. At The Calm County Homestay, this is your daily reality.
+            We've crafted these personalized Wayanad itineraries for up to 9
+            days to help you explore the best of this enchanting district in
+            Kerala, all from the comfort of your home-away-from-home. Discover
+            the magic of Wayanad with our expert guidance.
           </p>
-          <a
-            href="https://wa.me/917907756911"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={PlannerCSS.ctaButton}
-          >
-            Book Your Stay Now
-          </a>
+          <div className={PlannerCSS.tripGrid}>
+            {tripOptions.map((option) => (
+              <article key={option.days} className={PlannerCSS.tripCard}>
+                <h2>Explore Wayanad - Day {option.days}</h2>
+                <ul className={PlannerCSS.destinationList}>
+                  {option.destinations.map((destination) => (
+                    <li
+                      key={destination.name}
+                      className={PlannerCSS.destinationItem}
+                    >
+                      <div className={PlannerCSS.destinationInfo}>
+                        <strong>{destination.name}</strong>
+                        <span>
+                          approx. {destination.distance} from Calm County
+                        </span>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${destination.mapQuery}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={PlannerCSS.mapLink}
+                        >
+                          <FaMapMarkerAlt /> View on Map
+                        </a>
+                      </div>
+                      <figure className={PlannerCSS.polaroid}>
+                        <img src={destination.image} alt={destination.name} />
+                        <figcaption>{destination.name}</figcaption>
+                      </figure>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <div className={PlannerCSS.ctaSection}>
+            <h3>Ready for Your Wayanad Adventure?</h3>
+            <p>
+              Your perfect retreat amidst nature awaits. Book your stay at The
+              Calm County Homestay and make these travel plans a reality.
+            </p>
+            <a
+              href="https://wa.me/917907756911"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={PlannerCSS.ctaButton}
+            >
+              Book Your Stay Now
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
